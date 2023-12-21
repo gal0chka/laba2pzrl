@@ -1,6 +1,6 @@
 #ifndef SOLVE_H
 #define SOLVE_H
-int findtype(int num1, int num2);
+int findtype(char* n);
 int summa(int num1, int num2);
 int minus(int num1, int num2);
 int multiplication(int num1, int num2);

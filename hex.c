@@ -7,7 +7,7 @@
 
 char* dectohex(int n)
 {
-	char ans[15];
+	char* ans = (char*)malloc(32);
 	if (n >= 0)
 	{
 		sprintf(ans, "0x%x", n);
@@ -21,55 +21,58 @@ char* dectohex(int n)
 
 int hextodec(char* str)
 {
-	int ans;
+	int ans = 0;
 	int i = 2;
-	if (n[0] == '-')
+	//printf("%s\n", str);
+	if (str[0] == '-')
 	{
-		i++;
+		i += 1;
 	}
 	for (i; i < strlen(str)-1; i++)
 	{
-		if (isdigit(n[i]) != 0 && (int)(n[i] - '0')<10)
+		if (isdigit(str[i]) != 0 && (int)(str[i] - '0')<10)
 		{
-			ans += (int)(n[i] - '0')*pow(16, strlen(str) -i - 2);
+			ans += (int)(str[i] - '0')*pow(16, strlen(str) - i - 2);
 		}
-		else if (n[i] == 'a')
+		else if (str[i] == 'a')
 		{
 			ans += 10 * pow(16, strlen(str) -i - 2);
 		}
-		else if (n[i] == 'b')
+		else if (str[i] == 'b')
 		{
 
 			ans += 11 * pow(16, strlen(str) -i - 2);
-		}
-		else if (n[i] == 'c')
+		} 
+		else if (str[i] == 'c')
 		{
 			ans += 12 * pow(16, strlen(str) - i- 2);
 		}
-		else if (n[i] == 'd')
+		else if (str[i] == 'd')
 		{
-			ans += 13 * pow(16, strken(str) -i - 2);
+			ans += 13 * pow(16, strlen(str) -i - 2);
 		}
-		else if (n[i] == 'e')
+		else if (str[i] == 'e')
 		{
-			ans += 14 * pow(16, srtlen(str) - i - 2);
+			ans += 14 * pow(16, strlen(str) - i - 2);
 		}
-		else if (n[i] == 'f')
+		else if (str[i] == 'f')
 		{
 			ans += 15 * pow(16, strlen(str) -i - 2);
 		}
 		else
 		{
 			printf("ERROR\n");
-			exit(1);
+			exit(0);
 		}
 	}
-	if (n[0] = '-')
+	if (str[0] == '-')
 	{
+		//printf("%i\n", -ans);
 		return -ans;
 	}
 	else
 	{
+		//printf("%i\n", ans);
 		return ans;
 	}
 }

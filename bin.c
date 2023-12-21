@@ -8,23 +8,23 @@ int bintodec(char* str)
 {
 	int ans = 0;
 	int i = 0;
-	if (str[0] = '-')
+	if (str[0] == '-')
 	{
 		i++;
 	}
 	for (i; i<strlen(str) - 1; i++)
 	{
-		if (str[i] = '1')
+		if (str[i] == '1')
 		{
 			ans = ans + pow(2, strlen(str) - i - 2);
 		}
 		if (str[i]!='0' && str[i]!='1')
 		{
 			printf("WRONG TYPE\n");
-			exit(-1);
+			exit(0);
 		}
 	}
-	if (str[0] = '-')
+	if (str[0] == '-')
 	{
 		return -ans;
 	}
@@ -36,8 +36,8 @@ int bintodec(char* str)
 
 char* dectobin(int n)
 {
-	int ramainder;
-	char* binary = (char*)malloc(100*sizof(char));
+	int remainder;
+	char* binary = (char*)malloc(100*sizeof(char));
 	int i = 0;
 	while (n!=0)
 	{

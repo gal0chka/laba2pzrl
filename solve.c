@@ -3,29 +3,29 @@
 #include <string.h>
 #include "solve.h"
 
-int findtype(char* n)
+int findtype(char * n)
 {
-	if (n[0] = '-')
+	if (n[0] == '-')
 	{
-		n = n + 1;//сдвигаем
-	}
-	if (n[0] == '0' && strlen(n)= 2)
-	{
-		return 0;//в двоичной 0
-	}
-	if (n[0] == '0' && strlen(n)>2)
-	{
-		return 1;//восьмеричная
+		n = n + 1;
 	}
 	if (n[0] == '0' && n[1] == 'x')
 	{
-		return 2;//шестандцатиричная
+		return 2;
+	}
+	else if (n[0] == '0')
+	{
+		if (strlen(n) == 2)
+		{
+			return 0;
+		}
+		return 1;
 	}
 	else
 	{
-		return 0;//двоичная
+		return 0;
 	}
-
+}
 
 int summa(int num1, int num2)
 {
@@ -64,13 +64,13 @@ int XOR(int num1, int num2)
 
 int tilda(int num)
 {
-	if (n == 0)
+	if (num == 0)
 	{
 		return 0;
 	}
 	else
 	{
-		return -(n + 1);
+		return -(num + 1);
 	}
 }
 
