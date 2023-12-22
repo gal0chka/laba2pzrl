@@ -7,23 +7,23 @@ int findtype(char * n)
 {
 	if (n[0] == '-')
 	{
-		n = n + 1;
+		n = n + 1;//сдвигаем
 	}
 	if (n[0] == '0' && n[1] == 'x')
 	{
-		return 2;
+		return 2;//шестандцатиричная
 	}
 	else if (n[0] == '0')
 	{
 		if (strlen(n) == 2)
 		{
-			return 0;
+			return 0;//двоичный 0
 		}
-		return 1;
+		return 1;//
 	}
 	else
 	{
-		return 0;
+		return 0;//двоичная
 	}
 }
 

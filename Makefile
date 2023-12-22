@@ -16,7 +16,7 @@ solve.o: solve.c
 bin.o: bin.c 
 	$(CC) -c bin.c
 
-oct.o: oct.o
+oct.o: oct.c
 	$(CC) -c oct.c
 
 hex.o: hex.c

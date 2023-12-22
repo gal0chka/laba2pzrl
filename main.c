@@ -80,7 +80,10 @@ void main()
 			bin = dectobin(summa(bintodec(num1), bintodec(num2)));
 			//printf("%s %i\n", bin, 1111111);
 			printf("%s \t (%i)\n", bin, summa(bintodec(num1),bintodec(num2)));
-			free(bin);
+			if (bin[0] != '0')
+			{
+				free(bin);
+			}
 		}
 		else if (findtype(num1) == 1)
 		{
@@ -101,7 +104,10 @@ void main()
 		{
 			bin = dectobin(minus(bintodec(num1), bintodec(num2)));
 			printf("%s \t (%i)\n", bin, minus(bintodec(num1), bintodec(num2)));
-			free(bin);
+			if (bin[0] != '0')
+			{
+				free(bin);
+			}
 		}
 		else if (findtype(num1) == 1)
 		{
@@ -122,7 +128,10 @@ void main()
 		{
 			bin = dectobin(multiplication(bintodec(num1), bintodec(num2)));
 			printf("%s \t (%i)\n", bin, multiplication(bintodec(num1), bintodec(num2)));
-			free(bin);
+			if (bin[0] != '0')
+			{
+				free(bin);
+			}
 		}
 		else if (findtype(num1) == 1)
 		{
@@ -143,7 +152,10 @@ void main()
 		{
 			bin = dectobin(percent(bintodec(num1), bintodec(num2)));
 			printf("%s \t (%i)\n", bin, percent(bintodec(num1), bintodec(num2)));
-			free(bin);
+			if (bin[0] != '0')
+			{
+				free(bin);
+			}
 		}
 		else if (findtype(num1) == 1)
 		{
@@ -165,20 +177,23 @@ void main()
 
 			if (findtype(num1) == 0)
 			{
-				bin = dectobin(multiplication(bintodec(num1), bintodec(num2)));
-				printf("%s \t (%i)\n", bin, multiplication(bintodec(num1), bintodec(num2)));
+				bin = dectobin(bin_and(bintodec(num1), bintodec(num2)));
+				printf("%s \t (%i)\n", bin, bin_and(bintodec(num1), bintodec(num2)));
+				if (bin[0] != '0')
+			{
 				free(bin);
+			}
 			}
 			else if (findtype(num1) == 1)
 			{
-				oct = dectooct(multiplication(octtodec(num1), octtodec(num2)));
-				printf("%s \t (%i)\n", oct, multiplication(octtodec(num1), octtodec(num2)));
+				oct = dectooct(bin_and(octtodec(num1), octtodec(num2)));
+				printf("%s \t (%i)\n", oct, bin_and(octtodec(num1), octtodec(num2)));
 				free(oct);
 			}
 			else if(findtype(num1)==2)
 			{
-				hex = dectohex(multiplication(hextodec(num1), hextodec(num2)));
-				printf("%s \t (%i)\n", hex, multiplication(hextodec(num1), hextodec(num2)));
+				hex = dectohex(bin_and(hextodec(num1), hextodec(num2)));
+				printf("%s \t (%i)\n", hex, bin_and(hextodec(num1), hextodec(num2)));
 				free(hex);
 			}
 		}
@@ -194,20 +209,23 @@ void main()
 
 			if (findtype(num1) == 0)
 			{
-				bin = dectobin(multiplication(bintodec(num1), bintodec(num2)));
-				printf("%s \t (%i)\n", bin, multiplication(bintodec(num1), bintodec(num2)));
+				bin = dectobin(bin_or(bintodec(num1), bintodec(num2)));
+				printf("%s \t (%i)\n", bin, bin_or(bintodec(num1), bintodec(num2)));
+				if (bin[0] != '0')
+			{
 				free(bin);
+			}
 			}
 			else if (findtype(num1) == 1)
 			{
-				oct = dectooct(multiplication(octtodec(num1), octtodec(num2)));
-				printf("%s \t (%i)\n", oct, multiplication(octtodec(num1), octtodec(num2)));
+				oct = dectooct(bin_or(octtodec(num1), octtodec(num2)));
+				printf("%s \t (%i)\n", oct, bin_or(octtodec(num1), octtodec(num2)));
 				free(oct);
 			}
 			else if(findtype(num1)==2)
 			{
-				hex = dectohex(multiplication(hextodec(num1), hextodec(num2)));
-				printf("%s \t (%i)\n", hex, multiplication(hextodec(num1), hextodec(num2)));
+				hex = dectohex(bin_or(hextodec(num1), hextodec(num2)));
+				printf("%s \t (%i)\n", hex, bin_or(hextodec(num1), hextodec(num2)));
 				free(hex);
 			}
 		}
@@ -223,20 +241,23 @@ void main()
 
 			if (findtype(num1) == 0)
 			{
-				bin = dectobin(multiplication(bintodec(num1), bintodec(num2)));
-				printf("%s \t (%i)\n", bin, multiplication(bintodec(num1), bintodec(num2)));
+				bin = dectobin(XOR(bintodec(num1), bintodec(num2)));
+				printf("%s \t (%i)\n", bin, XOR(bintodec(num1), bintodec(num2)));
+				if (bin[0] != '0')
+			{
 				free(bin);
+			}
 			}
 			else if (findtype(num1) == 1)
 			{
-				oct = dectooct(multiplication(octtodec(num1), octtodec(num2)));
-				printf("%s \t (%i)\n", oct, multiplication(octtodec(num1), octtodec(num2)));
+				oct = dectooct(XOR(octtodec(num1), octtodec(num2)));
+				printf("%s \t (%i)\n", oct, XOR(octtodec(num1), octtodec(num2)));
 				free(oct);
 			}
 			else if(findtype(num1)==2)
 			{
-				hex = dectohex(multiplication(hextodec(num1), hextodec(num2)));
-				printf("%s \t (%i)\n", hex, multiplication(hextodec(num1), hextodec(num2)));
+				hex = dectohex(XOR(hextodec(num1), hextodec(num2)));
+				printf("%s \t (%i)\n", hex, XOR(hextodec(num1), hextodec(num2)));
 				free(hex);
 			}
 		}
